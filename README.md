@@ -18,8 +18,8 @@ Additionaly, I have used Framer Motion and React-Spinners inorder to improve the
 
 To install Framer-Motion onto your project, the following command is run on the terminal :
 
-###'npm install framer-motion'
+### `npm install framer-motion`
 
 To install React-Spinners onto your project, the following command is run on the terminal:
 
-###npm install --save react-spinners
+### `npm install --save react-spinners`
