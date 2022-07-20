@@ -1,0 +1,16 @@
+.filterbuttons {
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filtercontainer {
+    text-align: center;
+}
+
+.highlighted {
+    margin: 1rem;
+    cursor: pointer;
+    background-color: #460897;
+    border-radius: 5px;
+}

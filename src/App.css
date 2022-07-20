@@ -5,23 +5,15 @@ section {
     text-align: center;
     background-color: white;
     padding: 1rem;
-    border-radius: 12px;
-}
-
-.results {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 button {
     font: inherit;
     cursor: pointer;
-    background: #230052;
-    border: 1px solid #230052;
+    background: #76ba99;
+    border: none;
     color: white;
     padding: 0.75rem 2rem;
-    border-radius: 20px;
 }
 
 button:focus {
@@ -30,11 +22,34 @@ button:focus {
 
 button:hover,
 button:active {
-    background-color: #460897;
+    background-color: #ffdcae;
     border-color: #460897;
 }
 
 .search-bar {
     width: 90%;
     padding: 15px;
+    border-radius: 20px;
+}
+
+.start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 149px;
+    height: 149px;
+    border-radius: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

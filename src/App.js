@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Dev from "./components/Dev";
 import "./App.css";
+import Filter from "./components/Filter";
+import { motion, AnimatePresence } from "framer-motion";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 function App() {
   const [developer, setDeveloper] = useState([]);
@@ -8,6 +11,8 @@ function App() {
   const [isFound, setIsFound] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [filtered, setFiltered] = useState([]);
+  const [activeLanguage, setActiveLanguage] = useState("All");
 
   async function fetchDevHandler() {
     setIsLoading(true);
@@ -31,9 +36,11 @@ function App() {
           },
           description: devData.description,
           url: devData.url,
+          language: devData.language,
         };
       });
       setDeveloper(requiredFields);
+      setFiltered(requiredFields);
     } catch (error) {
       setError(error.message);
     }
@@ -45,12 +52,16 @@ function App() {
 
   if (error) returnMessage = <p>error</p>;
 
-  if (isLoading) returnMessage = <p>Loading....</p>;
-
   if (!isFound && !isLoading) returnMessage = <p>Found no information</p>;
 
   if (developer.length > 0)
-    returnMessage = <Dev search={searchTerm} developer={developer} />;
+    returnMessage = (
+      <Dev
+        search={searchTerm}
+        developer={filtered}
+        activeLanguage={activeLanguage}
+      />
+    );
 
   let searchBar;
   if (developer.length > 0)
@@ -65,13 +76,37 @@ function App() {
       />
     );
 
+  let filterBar;
+  if (developer.length > 0)
+    filterBar = (
+      <Filter
+        dev={developer}
+        setFiltered={setFiltered}
+        activeLanguage={activeLanguage}
+        setActiveLanguage={setActiveLanguage}
+      />
+    );
+
   return (
     <React.Fragment>
       <section>
-        <button onClick={fetchDevHandler}>Fetch Trending GitHub Repos</button>
+        {isFound && !isLoading && (
+          <button className="start" onClick={fetchDevHandler}>
+            Fetch Trending GitHub Repos
+          </button>
+        )}
       </section>
+      {isLoading && (
+        <div className="loader">
+          <ClimbingBoxLoader size={20} color={"#76ba99"} loading={isLoading} />{" "}
+        </div>
+      )}
+
       <section>{searchBar}</section>
-      <section>{returnMessage}</section>
+      <div>{filterBar}</div>
+      <motion.div>
+        <AnimatePresence>{returnMessage}</AnimatePresence>
+      </motion.div>
     </React.Fragment>
   );
 }

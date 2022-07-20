@@ -1,17 +1,14 @@
 import React from "react";
 import DevList from "./DevList";
 import classes from "./Dev.module.css";
+import { motion } from "framer-motion";
 
 const Dev = (props) => {
   return (
-    <ul className={classes["dev-list"]}>
+    <motion.div className={classes["dev-list"]}>
       {props.developer
         .filter((data) => {
           if (props.search === "") {
-            return data;
-          } else if (
-            data.name.toLowerCase().startsWith(props.search.toLowerCase())
-          ) {
             return data;
           } else if (
             data.name.toLowerCase().includes(props.search.toLowerCase())
@@ -26,9 +23,10 @@ const Dev = (props) => {
             description={dev.description}
             repo_name={dev.repo.name}
             url={dev.url}
+            activeLanguage ={props.activeLanguage}
           />
         ))}
-    </ul>
+    </motion.div>
   );
 };
 

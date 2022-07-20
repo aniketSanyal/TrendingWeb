@@ -1,20 +1,35 @@
 .devlist {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: #230052;
+    position: relative;
+    margin: 1.5rem 3rem;
+    padding: 2rem;
+    background-color: #ced89e;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 12px;
     text-align: center;
     color: white;
+    height: 35vh;
 }
 
 .devlist h2 {
-    font-size: 2rem;
-    color: #f7e702;
+    font-size: 2.2rem;
+    color: #76ba99;
 }
 
 .devlist h3 {
-    color: #eccf77;
+    color: #adcf9f;
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
+}
+
+.devlist p {
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.link {
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    color: #76ba99;
+    font-size: 1.3rem;
 }
