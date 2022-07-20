@@ -1,7 +1,7 @@
 # Trending GitHub Repo Project
 ![Untitled](https://user-images.githubusercontent.com/86841312/179998834-59ccfb4a-e7e0-47d5-b7a1-b40c1ceeeb55.png)
 
-This projects visualises the trending github repositories. The API endpoint is at 'https://github-trending-api.de.a9sapp.eu/'
+This projects visualises the trending github repositories. The API endpoint is at 'https://github-trending-api.de.a9sapp.eu/'. The users/prjects are searchable and filterable based on the language used.
 
 ## Available Scripts
 
