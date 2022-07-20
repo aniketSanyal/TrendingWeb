@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Trending GitHub Repo Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This projects visualises the trending github repositories. The API endpoint is at 'https://github-trending-api.de.a9sapp.eu/'
 
 ## Available Scripts
 
